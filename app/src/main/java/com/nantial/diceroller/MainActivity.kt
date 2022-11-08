@@ -10,6 +10,7 @@ import org.w3c.dom.Text
 import java.util.Random
 
 class MainActivity : AppCompatActivity() {
+    lateinit var diceImage : ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,8 +19,8 @@ class MainActivity : AppCompatActivity() {
         rollButton.text = "Let's Roll!"
         rollButton.setOnClickListener {
             rollDice()
-
         }
+        diceImage = findViewById(R.id.dice_image)
     }
 
     private fun rollDice() {
@@ -32,12 +33,6 @@ class MainActivity : AppCompatActivity() {
             5 -> R.drawable.dice_5
             else -> R.drawable.dice_6
         }
-        val diceImage: ImageView = findViewById(R.id.dice_image)
         diceImage.setImageResource(drawableResource)
-
-
-
-
-
     }
 }
